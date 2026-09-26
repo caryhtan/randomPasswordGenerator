@@ -6,8 +6,9 @@ body {
 }
 
 .container {
-    width: 500px;
+    width: 700px;
     margin: 120px auto;
+    max-width: 90%;
 }
 
 h1 {
@@ -25,8 +26,26 @@ h1 span {
     color: #d5d4d8;
     font-size: 20px;
     font-weight: 400;
+    margin: 0;
+}
+
+#pw-length {
+    font-family: "Inter", sans-serif;
+    color: #d5d4d8;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 0px;
     margin-top: 0;
-    margin-bottom: 70px;
+}
+
+#length-value {
+    color: #4ADF86;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#generate-btn {
+    margin-bottom: 0px;
 }
 
 button {
@@ -49,11 +68,16 @@ hr {
 .password-container {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .password-container p {
-    width: 210px;
+    min-width: 210px;
+    width: auto;
+    padding: 0 12px;
     height: 40px;
+    font-size: 20px;
 
     background: #273549;
     color: #55F991;
@@ -65,4 +89,64 @@ hr {
     align-items: center;
 
     margin: 0;
+}
+
+.length-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 60px;
+}
+
+#length-slider {
+    width: 250px;
+}
+
+.password-box {
+    position: relative;
+}
+
+.password-box p {
+    cursor: pointer;
+}
+
+.tooltip {
+    position: absolute; /* positions the tooltip relative to its nearest positioned parent */
+    
+    bottom: 50px;                 /* moves the tooltip 50px above the bottom of its parent */
+    left: 50%;                    /* places the tooltip's left edge at the parent's horizontal center */
+    transform: translateX(-50%); /* moves it left by half its own width to center it */
+
+    background: #111827;
+    color: white;
+
+    padding: 10px 16px;
+    border-radius: 5px;
+
+    font-size: 20px;
+
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+}
+
+.password-box:hover p:not(:empty) + .tooltip { /* show the tooltip when hovering over a password box, 
+                                                but only if the password <p> is not empty */
+    opacity: 1;
+}
+
+.options {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.options label {
+    font-family: "Inter", sans-serif;
+    color: #d5d4d8;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
